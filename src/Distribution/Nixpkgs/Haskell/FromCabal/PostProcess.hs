@@ -122,6 +122,7 @@ hooks =
   , ("haddock", haddockHook) -- https://github.com/haskell/haddock/issues/511
   , ("hakyll", set (testDepends . tool . contains (pkg "utillinux")) True) -- test suite depends on "rev"
   , ("haskell-src-exts", set doCheck False)
+  , ("haskell-gi-base", set (libraryDepends . tool . contains (pkg "gobject-introspection")) True)
   , ("hfsevents", hfseventsOverrides)
   , ("HFuse", set phaseOverrides hfusePreConfigure)
   , ("hlibgit2 >= 0.18.0.14", set (testDepends . tool . contains (pkg "git")) True)
